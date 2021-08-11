@@ -82,13 +82,16 @@ justify-content: center;
     align-items: center;
     background-color: rgba(0,0,0,.9);
 }
-.winner-message h2{
+.winner-message h2,.who-plays{
     color: white;
     font-size: 100px;
 }
 .winner-message button{
     font-size: 50px;
     cursor: pointer;
+}
+.who-plays{
+    text-align: center;
 }
 .hide{
     display: none;

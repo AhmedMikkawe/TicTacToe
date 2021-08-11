@@ -16,10 +16,12 @@ const gameBoard = (function(){
     const restartButton = document.getElementById('restartButton');
     const winningMessageElement = document.getElementById('winner-message');
     const winningMessageTextElement = document.querySelector('[data-message]');
+    const whoPlaysMessage = document.getElementById('who-plays');
 
     restartButton.addEventListener('click',startGame);
     function startGame() {
         circleTurn = false;
+        whoPlaysMessage.innerText = "X's turn";
         cells.forEach(cell => {
             cell.classList.remove(X_CLASS);
             cell.classList.remove(CIRCLE_CLASS);
@@ -54,6 +56,11 @@ const gameBoard = (function(){
     }
     function swapTurns() {
         circleTurn = !circleTurn;
+        if (circleTurn){
+            whoPlaysMessage.innerText = "O's turn";
+        }else{
+            whoPlaysMessage.innerText = "X's turn";
+        }
     }
     function isDraw() {
         return [...cells].every(cell => {
